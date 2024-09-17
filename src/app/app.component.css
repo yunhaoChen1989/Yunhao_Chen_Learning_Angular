@@ -1,0 +1,25 @@
+
+
+.users{
+  border: black solid 1px;
+  border-radius: 1%;
+  float: left;
+  width: 31%;
+  margin-right: 5px;
+  margin-bottom: 5px;
+  box-shadow: gray 1px 1px 10px;
+}
+
+.users h3{
+  border-bottom: black solid 1px;
+  font-size: 14px;
+  text-shadow: gray 2px 2px 5px;
+}
+.users p{
+  border-bottom: black solid 1px;
+
+}
+.users p:last-child{
+  border-bottom: none;
+  color: red;
+}
