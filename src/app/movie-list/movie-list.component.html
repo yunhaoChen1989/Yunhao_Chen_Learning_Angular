@@ -1,4 +1,4 @@
 <div *ngFor="let movie of movies; index as i;"  style="{{(i % 2 == 0) ? 'background-color: pink;' : 'background-color: teal;'}}" >
-  <app-movie-list-item></app-movie-list-item>
+  <app-movie-list-item [movies]="movie"></app-movie-list-item>
 </div>
 

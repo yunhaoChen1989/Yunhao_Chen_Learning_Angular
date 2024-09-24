@@ -1,10 +1,13 @@
 import {Component, Input} from '@angular/core';
 import {Movies} from "../Movies";
+import {NgOptimizedImage} from "@angular/common";
 
 @Component({
   selector: 'app-movie-list-item',
   standalone: true,
-  imports: [],
+  imports: [
+    NgOptimizedImage
+  ],
   templateUrl: './movie-list-item.component.html',
   styleUrl: './movie-list-item.component.css'
 })
