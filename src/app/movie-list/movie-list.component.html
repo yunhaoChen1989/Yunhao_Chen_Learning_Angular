@@ -1,4 +1,4 @@
-<app-movie-list-item [movies]="movies[0]" ></app-movie-list-item>
-<app-movie-list-item [movies]="movies[1]"></app-movie-list-item>
-<app-movie-list-item [movies]="movies[2]"></app-movie-list-item>
-<app-movie-list-item [movies]="movies[3]"></app-movie-list-item>
+<div *ngFor="let movie of movies; index as i;"  style="{{(i % 2 == 0) ? 'background-color: pink;' : 'background-color: teal;'}}" >
+  <app-movie-list-item></app-movie-list-item>
+</div>
+
