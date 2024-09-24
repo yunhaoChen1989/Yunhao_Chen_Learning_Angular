@@ -12,9 +12,9 @@ import {Movies} from "../Movies";
   styleUrl: './movie-list.component.css'
 })
 export class MovieListComponent {
-  movies?:Movies[];
+  movies:Movies[];
 
-  ngOnInit(): void{
+  constructor(){
     this.movies = [
       {name:"The Avengers",yearReleased:2018,director:"Joss Whedon",productionCompany:"Marvel Studios"},
       {name:"Captain America",yearReleased:2000,director:"Simon",productionCompany:"Marvel Studios"},

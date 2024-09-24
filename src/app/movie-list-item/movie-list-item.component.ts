@@ -9,5 +9,5 @@ import {Movies} from "../Movies";
   styleUrl: './movie-list-item.component.css'
 })
 export class MovieListItemComponent {
-  @Input() movies?:Movies[];
+  @Input() movies?:Movies;
 }
