@@ -22,6 +22,10 @@ export class MovieListComponent implements OnInit{
   }
 
   ngOnInit(): void {
-
+    this.movieService.getAllMovies().subscribe({
+      next:(data: Movies[])=> this.movies = data,
+      error:err=> console.error("Error fetching movies", err),
+      complete:()=> console.log("movies data fetch complete!")
+    });
   }
 }
