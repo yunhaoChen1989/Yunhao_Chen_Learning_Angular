@@ -29,11 +29,18 @@ export class AppComponent implements OnInit{
   constructor(private movieService : MovieServiceService) {
   }
   ngOnInit(): void {
-    this.movieService.getMovieById(0).subscribe({
+    this.getMovie(0);
+  }
+
+  showMovie(id:number){
+    this.getMovie(id);
+  }
+
+  getMovie(id:number){
+    this.movieService.getMovieById(id).subscribe({
       next:(data: Movies|undefined)=> this.clickMovie = data,
       error:err=> console.error("Error fetching movies", err),
       complete:()=> console.log("movies data fetch complete!")
     });
   }
-
 }

@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, EventEmitter, OnInit, Output} from '@angular/core';
 import {MovieListItemComponent} from "../movie-list-item/movie-list-item.component";
 import {Movies} from "../Movies";
 import {NgForOf} from "@angular/common";
@@ -16,6 +16,7 @@ import {MovieServiceService} from "../../service/movie-service.service";
 })
 export class MovieListComponent implements OnInit{
   movies?:Movies[];
+  @Output() parentFun = new EventEmitter<unknown>();
 
   constructor(private movieService : MovieServiceService){
 
@@ -27,5 +28,9 @@ export class MovieListComponent implements OnInit{
       error:err=> console.error("Error fetching movies", err),
       complete:()=> console.log("movies data fetch complete!")
     });
+  }
+
+  clickMovie(id:number){
+    this.parentFun.emit(id);
   }
 }
