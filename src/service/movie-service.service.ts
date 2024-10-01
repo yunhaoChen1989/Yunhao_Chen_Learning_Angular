@@ -16,17 +16,17 @@ export class MovieServiceService{
     return of(moviesList)
   }
   //get movie by id
-  getMovieById(id:number){
+  getMovieById(id:number):Observable<Movies | undefined>{
     const movie = this.movies.find(movie=>movie.id===id);
     return of(movie);
   }
   //add movie
-  addMovie(movie:Movies){
+  addMovie(movie:Movies):Observable<Movies[]>{
     this.movies.push(movie);
     return of(this.movies);
   }
   //update movie
-  updateMovie(movie:Movies){
+  updateMovie(movie:Movies):Observable<Movies[]>{
     const index = this.movies.findIndex(m=>m.id===movie.id);
     if(index !==-1){
       this.movies[index] = movie;
@@ -34,7 +34,7 @@ export class MovieServiceService{
     return of(this.movies);
   }
   //delete movie by id
-  deleteMovie(id:number){
+  deleteMovie(id:number):Observable<Movies[]>{
     this.movies=this.movies.filter(m=>m.id !==id);
     return of(this.movies);
   }

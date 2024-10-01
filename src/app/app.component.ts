@@ -1,17 +1,20 @@
-import { Component } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { User } from '../share/models/User';
 import {NgForOf, NgIf} from "@angular/common";
 import {MovieListComponent} from "./movie-list/movie-list.component";
+import {Movies} from "./Movies";
+import {MovieServiceService} from "../service/movie-service.service";
+import {MovieListItemComponent} from "./movie-list-item/movie-list-item.component";
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, NgForOf, NgIf, MovieListComponent],
+  imports: [RouterOutlet, NgForOf, NgIf, MovieListComponent, MovieListItemComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
-export class AppComponent {
+export class AppComponent implements OnInit{
   title?: string;
   userList: User[] = [
     {id: 0, firstName: "yunhao", lastName: "chen", age: 18,address: "", isAdmin: true},
@@ -21,5 +24,16 @@ export class AppComponent {
     {id: 4, firstName: "peter", lastName: "M", age: 22,address: "", isAdmin: false},
     {id: 5, firstName: "leo", lastName: "burnett", age: 30,address: "", isAdmin: false}
   ]
+  clickMovie?:Movies;
+
+  constructor(private movieService : MovieServiceService) {
+  }
+  ngOnInit(): void {
+    this.movieService.getMovieById(0).subscribe({
+      next:(data: Movies|undefined)=> this.clickMovie = data,
+      error:err=> console.error("Error fetching movies", err),
+      complete:()=> console.log("movies data fetch complete!")
+    });
+  }
 
 }
