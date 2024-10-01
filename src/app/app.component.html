@@ -9,5 +9,5 @@ Sept 17, 2024
   <h2>Item List</h2>
   <app-movie-list-item [movies]="clickMovie"></app-movie-list-item>
   <h2>Movie List</h2>
-  <app-movie-list (parentFun)="showMovie()"></app-movie-list>
+  <app-movie-list (parentFun)="showMovie($event)"></app-movie-list>
 </div>

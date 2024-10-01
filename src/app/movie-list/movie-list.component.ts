@@ -16,7 +16,7 @@ import {MovieServiceService} from "../../service/movie-service.service";
 })
 export class MovieListComponent implements OnInit{
   movies?:Movies[];
-  @Output() parentFun = new EventEmitter<unknown>();
+  @Output() parentFun = new EventEmitter<number>();
 
   constructor(private movieService : MovieServiceService){
 

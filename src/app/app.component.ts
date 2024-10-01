@@ -32,7 +32,7 @@ export class AppComponent implements OnInit{
     this.getMovie(0);
   }
 
-  showMovie(id:number){
+    showMovie(id:number){
     this.getMovie(id);
   }
 
