@@ -12,6 +12,7 @@ import {MovieListComponent} from "./movie-list/movie-list.component";
   styleUrl: './app.component.css'
 })
 export class AppComponent {
+  title?: string;
   userList: User[] = [
     {id: 0, firstName: "yunhao", lastName: "chen", age: 18,address: "", isAdmin: true},
     {id: 1, firstName: "aryan", lastName: "key", age: 19,address: "", isAdmin: false},
@@ -20,4 +21,5 @@ export class AppComponent {
     {id: 4, firstName: "peter", lastName: "M", age: 22,address: "", isAdmin: false},
     {id: 5, firstName: "leo", lastName: "burnett", age: 30,address: "", isAdmin: false}
   ]
+
 }
