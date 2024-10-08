@@ -4,6 +4,7 @@ import {provideRouter, Routes} from '@angular/router';
 import {MovieListComponent} from "./app/movie-list/movie-list.component";
 import {MovieListItemComponent} from "./app/movie-list-item/movie-list-item.component";
 import {PageNotFoundComponentComponent} from "./app/page-not-found-component/page-not-found-component.component";
+import {ModifyMovieComponent} from "./app/modify-movie/modify-movie.component";
 
 /*bootstrapApplication(AppComponent, appConfig)
   .catch((err) => console.error(err));*/
@@ -11,8 +12,8 @@ import {PageNotFoundComponentComponent} from "./app/page-not-found-component/pag
 const routes:Routes=[
   {path:'', redirectTo:'/movies', pathMatch:'full'},//default route
   {path: 'movies', component: MovieListComponent},
-  {path: 'students/:id', component: MovieListItemComponent},
-  {path:'modify-student', component:MovieListItemComponent},
+  {path: 'movie/:id', component: MovieListItemComponent},
+  {path:'modify-movie', component:ModifyMovieComponent},
   {path:'**', component:PageNotFoundComponentComponent},
 ];
 bootstrapApplication(AppComponent, {providers:[provideRouter(routes)]});

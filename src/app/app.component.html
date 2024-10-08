@@ -5,9 +5,12 @@ yunhao chen
 0847446
 Sept 17, 2024
 -->
+<div class="nav-bar">
+  <nav>
+    <a routerLink="/movies" routerLinkActive="active">Movie List</a>
+    <a routerLink="/modify-movie" routerLinkActive="active">Modify movie</a>
+  </nav>
+</div>
 <div class="main">
-  <h2>Item List</h2>
-  <app-movie-list-item [movies]="clickMovie"></app-movie-list-item>
-  <h2>Movie List</h2>
-  <app-movie-list (parentFun)="showMovie($event)"></app-movie-list>
+  <router-outlet></router-outlet>
 </div>
