@@ -5,3 +5,6 @@
   <div>Director: {{movies?.director}}</div>
   <div>Production Company: {{movies?.productionCompany}}</div>
 </div>
+<div *ngIf="showButton">
+  <button (click)="goBack()">Back to Movie List</button>
+</div>
