@@ -15,6 +15,4 @@ const routes:Routes=[
   {path:'modify-student', component:MovieListItemComponent},
   {path:'**', component:PageNotFoundComponentComponent},
 ];
-/*bootstrapApplication(AppComponent, appConfig)
-  .catch((err) => console.error(err));*/
 bootstrapApplication(AppComponent, {providers:[provideRouter(routes)]});
