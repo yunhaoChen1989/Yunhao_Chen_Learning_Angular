@@ -1,5 +1,5 @@
 <div>
-  <form *ngIf="movieForm" [formGroup]="movieForm" (ngSubmit) = "save()">
+  <form  [formGroup]="movieForm" (ngSubmit) = "save()">
     <div>
       <label>Name: </label>
       <input type="text" name="name" id="name" formControlName="name" />

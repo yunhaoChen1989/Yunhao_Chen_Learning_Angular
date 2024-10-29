@@ -42,5 +42,7 @@ export class MovieServiceService{
     this.movies=this.movies.filter(m=>m.id !==id);
     return of(this.movies);
   }
-
+  generateNewId():number{
+    return this.movies.length+1;
+  }
 }

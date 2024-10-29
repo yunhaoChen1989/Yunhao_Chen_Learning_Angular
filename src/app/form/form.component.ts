@@ -18,7 +18,16 @@ import {NgIf} from "@angular/common";
 export class FormComponent implements OnInit{
   movieForm!: FormGroup;
   movies?:Movies;
+  add:boolean=true;
   constructor(private route: ActivatedRoute, private router: Router, private movieService:MovieServiceService) {
+    this.movieForm = new FormGroup({
+      id:new FormControl(null),
+      name:new FormControl(null),
+      yearReleased:new FormControl(null),
+      director:new FormControl(null),
+      productionCompany:new FormControl(null),
+      imageUrl:new FormControl(null)
+    })
   }
 
   ngOnInit(): void {
@@ -28,31 +37,35 @@ export class FormComponent implements OnInit{
       this.movieService.getMovieById(id).subscribe(m=>{
         //console.log(m);
         this.movies=m;
-        if(this.movies){
-          this.movieForm = new FormGroup({
-            id:new FormControl(null),
-            name:new FormControl(null),
-            yearReleased:new FormControl(null),
-            director:new FormControl(null),
-            productionCompany:new FormControl(null),
-            imageUrl:new FormControl(null)
-          })
-          this.movieForm.setValue(this.movies);
-          console.log(this.movieForm)
-        }
-
+        this.add=false;
       })
+    }else{
+      this.movies = {
+        id:this.movieService.generateNewId(),
+        name:'',
+        yearReleased:2024,
+        director:'',
+        productionCompany:'',
+        imageUrl:''
+      }
+      this.add=true;
     }
+    if(this.movies){
+      this.movieForm.setValue(this.movies);
+    }
+
   }
   save(){
-
     this.movies = this.movieForm.value;
-    if(this.movies){
-      console.log(this.movies)
-      this.movieService.updateMovie(this.movies);
+    if(this.add){
+      this.movieService.addMovie(this.movies!);
+      this.router.navigate(['movies']);
+    }else{
+      this.movieService.updateMovie(this.movies!);
       this.router.navigate(['movies']);
 
     }
+
     //console.log("done save")
   }
 }

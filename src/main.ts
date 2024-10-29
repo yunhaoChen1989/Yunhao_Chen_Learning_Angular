@@ -14,6 +14,7 @@ const routes:Routes=[
   {path:'', redirectTo:'/movies', pathMatch:'full'},//default route
   {path: 'movies', component: MovieListComponent},
   {path: 'movie/:id', component: MovieListItemComponent},
+  {path: 'addMovie', component: FormComponent},
   {path: 'edit/:id', component: FormComponent},
   {path:'modify-movie', component:ModifyMovieComponent},
   {path:'**', component:PageNotFoundComponentComponent},
