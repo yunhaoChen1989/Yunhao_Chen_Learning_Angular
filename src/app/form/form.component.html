@@ -1,0 +1,26 @@
+<div>
+  <form *ngIf="movieForm" [formGroup]="movieForm" >
+    <div>
+      <label>Name: </label>
+      <input type="text" name="name" id="name" formControlName="name"/>
+    </div>
+    <div>
+      <label>yearReleased: </label>
+      <input type="text" name="yearReleased" id="yearReleased" formControlName="yearReleased"/>
+    </div>
+    <div>
+      <label>director: </label>
+      <input type="text" name="director" id="director" formControlName="director" />
+    </div>
+    <div>
+      <label>production Company: </label>
+      <input type="text" name="productionCompany" id="productionCompany" formControlName="productionCompany" />
+    </div>
+    <div>
+      <label>image file name: </label>
+      <input type="text" name="imageUrl" id="imageUrl" formControlName="imageUrl"/>
+    </div>
+    <button type="submit">Save</button>
+  </form>
+
+</div>
