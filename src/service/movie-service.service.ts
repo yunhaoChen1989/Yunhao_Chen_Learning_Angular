@@ -6,6 +6,10 @@ import {moviesList} from "../data/movies-content";
 @Injectable({
   providedIn: 'root'
 })
+/**
+ * making sure every CRUD is working in service
+ * Oct 29, 2024
+ */
 export class MovieServiceService{
  private movies:Movies[] = moviesList;
   constructor() {

@@ -1,5 +1,9 @@
 import {Movies} from '../app/Movies';
 
+/**
+ * making sure every CRUD is working in service
+ * Oct 29, 2024
+ */
 export const moviesList : Movies[] =
   [
     {id:1, name:"The Avengers",yearReleased:2018,director:"Joss Whedon",productionCompany:"Marvel Studios",imageUrl:"avengers.jpg"},
