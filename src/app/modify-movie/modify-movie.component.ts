@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import {FormBuilder, FormGroup, Validator} from "@angular/forms";
 
 @Component({
   selector: 'app-modify-movie',

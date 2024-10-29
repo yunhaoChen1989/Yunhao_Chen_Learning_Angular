@@ -23,3 +23,7 @@
   border-bottom: none;
   color: red;
 }
+
+.nav-bar a{
+  margin: 5px;
+}

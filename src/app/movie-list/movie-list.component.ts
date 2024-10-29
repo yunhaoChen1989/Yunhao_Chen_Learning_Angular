@@ -4,6 +4,7 @@ import {Movies} from "../Movies";
 import {NgForOf} from "@angular/common";
 import {MovieServiceService} from "../../service/movie-service.service";
 import {RouterLink} from "@angular/router";
+import {routes} from "../app.routes";
 
 @Component({
   selector: 'app-movie-list',
@@ -34,5 +35,8 @@ export class MovieListComponent implements OnInit{
 
   clickMovie(id:number){
     this.parentFun.emit(id);
+  }
+
+  editMovie(id:number){
   }
 }
