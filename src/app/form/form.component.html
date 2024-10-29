@@ -1,8 +1,8 @@
 <div>
-  <form *ngIf="movieForm" [formGroup]="movieForm" >
+  <form *ngIf="movieForm" [formGroup]="movieForm" (ngSubmit) = "save()">
     <div>
       <label>Name: </label>
-      <input type="text" name="name" id="name" formControlName="name"/>
+      <input type="text" name="name" id="name" formControlName="name" />
     </div>
     <div>
       <label>yearReleased: </label>

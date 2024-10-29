@@ -44,4 +44,15 @@ export class FormComponent implements OnInit{
       })
     }
   }
+  save(){
+
+    this.movies = this.movieForm.value;
+    if(this.movies){
+      console.log(this.movies)
+      this.movieService.updateMovie(this.movies);
+      this.router.navigate(['movies']);
+
+    }
+    //console.log("done save")
+  }
 }
