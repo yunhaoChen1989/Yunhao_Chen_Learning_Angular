@@ -3,7 +3,7 @@
   <div class="listButton">
     <button>add movie</button>
     <button [routerLink]="['/edit', movie.id]">edit</button>
-    <button>delete</button>
+    <button (click)="deleteMovie(movie.id)">delete</button>
   </div>
 </div>
 

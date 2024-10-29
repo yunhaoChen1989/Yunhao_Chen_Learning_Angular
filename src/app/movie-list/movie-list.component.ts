@@ -26,17 +26,28 @@ export class MovieListComponent implements OnInit{
   }
 
   ngOnInit(): void {
-    this.movieService.getAllMovies().subscribe({
-      next:(data: Movies[])=> this.movies = data,
-      error:err=> console.error("Error fetching movies", err),
-      complete:()=> console.log("movies data fetch complete!")
-    });
+    this.getAllMovies();
   }
 
   clickMovie(id:number){
     this.parentFun.emit(id);
   }
 
-  editMovie(id:number){
+  deleteMovie(id:number){
+    this.movieService.deleteMovie(id).subscribe({
+      next:(data)=>this.movies=data,
+      error:err=> console.error("Error delete movies", err),
+      complete:()=> console.log("movies data delete complete!")
+    });
+    //console.log("delete done");
+    //this.getAllMovies();
+  }
+
+  getAllMovies(){
+    this.movieService.getAllMovies().subscribe({
+      next:(data: Movies[])=> this.movies = data,
+      error:err=> console.error("Error fetching movies", err),
+      complete:()=> console.log("movies data fetch complete!")
+    });
   }
 }
