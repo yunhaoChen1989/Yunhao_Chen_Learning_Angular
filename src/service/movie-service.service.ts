@@ -17,7 +17,7 @@ export class MovieServiceService{
 
   //fetch all record of movies
   getAllMovies(): Observable<Movies[]>{
-    return of(moviesList)
+    return of(this.movies)
   }
   //get movie by id
   getMovieById(id:number):Observable<Movies | undefined>{
