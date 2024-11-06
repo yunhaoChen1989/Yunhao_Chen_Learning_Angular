@@ -35,9 +35,12 @@ export class FormComponent implements OnInit{
     //console.log("id",id);
     if(id){
       this.movieService.getMovieById(id).subscribe(m=>{
-        //console.log(m);
+        console.log("get movie",m);
         this.movies=m;
         this.add=false;
+        if(this.movies){
+          this.movieForm.setValue(this.movies);
+        }
       })
     }else{
       this.movies = {
@@ -49,21 +52,20 @@ export class FormComponent implements OnInit{
         imageUrl:''
       }
       this.add=true;
+      if(this.movies){
+        this.movieForm.setValue(this.movies);
+      }
     }
-    if(this.movies){
-      this.movieForm.setValue(this.movies);
-    }
+
 
   }
   save(){
     this.movies = this.movieForm.value;
     if(this.add){
-      this.movieService.addMovie(this.movies!);
-      this.router.navigate(['movies']);
-    }else{
-      this.movieService.updateMovie(this.movies!);
-      this.router.navigate(['movies']);
+      this.movieService.addMovie(this.movies!).subscribe(data=>this.router.navigate(['movies']));
 
+    }else{
+      this.movieService.updateMovie(this.movies!).subscribe(data=>this.router.navigate(['movies']));
     }
 
     //console.log("done save")

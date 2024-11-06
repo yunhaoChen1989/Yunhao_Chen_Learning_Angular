@@ -1,12 +1,15 @@
 import { Injectable } from '@angular/core';
 import {Movies} from "../app/Movies";
+import {InMemoryDbService} from "angular-in-memory-web-api";
+import {moviesList} from "../data/movies-content";
+import {Observable} from "rxjs";
 
 @Injectable({
   providedIn: 'root'
 })
-export class InMemoryDataServiceService {
+export class InMemoryDataServiceService implements InMemoryDbService{
 
-  constructor() {
+  createDb() {
     const moviesList : Movies[] =
       [
         {id:1, name:"The Avengers",yearReleased:2018,director:"Joss Whedon",productionCompany:"Marvel Studios",imageUrl:"avengers.jpg"},

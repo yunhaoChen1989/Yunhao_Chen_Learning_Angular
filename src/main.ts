@@ -6,6 +6,10 @@ import {MovieListItemComponent} from "./app/movie-list-item/movie-list-item.comp
 import {PageNotFoundComponentComponent} from "./app/page-not-found-component/page-not-found-component.component";
 import {ModifyMovieComponent} from "./app/modify-movie/modify-movie.component";
 import {FormComponent} from "./app/form/form.component";
+import {provideHttpClient, withInterceptorsFromDi} from "@angular/common/http";
+import {importProvidersFrom} from "@angular/core";
+import {HttpClientInMemoryWebApiModule} from "angular-in-memory-web-api";
+import {InMemoryDataServiceService} from "./service/in-memory-data-service.service";
 
 /*bootstrapApplication(AppComponent, appConfig)
   .catch((err) => console.error(err));*/
@@ -19,4 +23,7 @@ const routes:Routes=[
   {path:'modify-movie', component:ModifyMovieComponent},
   {path:'**', component:PageNotFoundComponentComponent},
 ];
-bootstrapApplication(AppComponent, {providers:[provideRouter(routes)]});
+bootstrapApplication(AppComponent, {providers:[provideRouter(routes),
+    provideHttpClient(withInterceptorsFromDi()),
+    importProvidersFrom(HttpClientInMemoryWebApiModule.forRoot(InMemoryDataServiceService,{delay:1000}))
+  ]});

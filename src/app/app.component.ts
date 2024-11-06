@@ -29,7 +29,6 @@ export class AppComponent implements OnInit{
   constructor(private movieService : MovieServiceService) {
   }
   ngOnInit(): void {
-    this.getMovie(0);
   }
 
     showMovie(id:number){

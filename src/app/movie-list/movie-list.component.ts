@@ -35,7 +35,7 @@ export class MovieListComponent implements OnInit{
 
   deleteMovie(id:number){
     this.movieService.deleteMovie(id).subscribe({
-      next:(data)=>this.movies=data,
+      next:(data)=>this.getAllMovies(),
       error:err=> console.error("Error delete movies", err),
       complete:()=> console.log("movies data delete complete!")
     });
