@@ -17,11 +17,11 @@ import {InMemoryDataServiceService} from "./service/in-memory-data-service.servi
 const routes:Routes=[
   {path:'', redirectTo:'/movies', pathMatch:'full'},//default route
   {path: 'movies', component: MovieListComponent},
-  {path: 'movie/:id', component: MovieListItemComponent},
-  {path: 'addMovie', component: FormComponent},
-  {path: 'edit/:id', component: FormComponent},
-  {path:'modify-movie', component:ModifyMovieComponent},
-  {path:'**', component:PageNotFoundComponentComponent},
+  {path: 'movie/:id', loadComponent:()=>import('./app/movie-list-item/movie-list-item.component').then(m=>m.MovieListItemComponent)},
+  {path: 'addMovie', loadComponent:()=>import('./app/form/form.component').then(m=>m.FormComponent) },
+  {path: 'edit/:id', loadComponent:()=>import('./app/form/form.component').then(m=>m.FormComponent) },
+  {path:'modify-movie', loadComponent:()=>import('./app/modify-movie/modify-movie.component').then(m=>m.ModifyMovieComponent)},
+  {path:'**', loadComponent:()=>import('./app/page-not-found-component/page-not-found-component.component').then(m=>m.PageNotFoundComponentComponent)},
 ];
 bootstrapApplication(AppComponent, {providers:[provideRouter(routes),
     provideHttpClient(withInterceptorsFromDi()),
