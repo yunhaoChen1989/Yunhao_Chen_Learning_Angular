@@ -3,6 +3,7 @@ import {Movies} from "../Movies";
 import {CurrencyPipe, DatePipe, NgIf, NgOptimizedImage, UpperCasePipe} from "@angular/common";
 import {ActivatedRoute, Router} from "@angular/router";
 import {MovieServiceService} from "../../service/movie-service.service";
+import {CustomPipePipe} from "../../pipes/custom-pipe.pipe";
 
 
 
@@ -14,7 +15,8 @@ import {MovieServiceService} from "../../service/movie-service.service";
     NgIf,
     UpperCasePipe,
     DatePipe,
-    CurrencyPipe
+    CurrencyPipe,
+    CustomPipePipe
   ],
   templateUrl: './movie-list-item.component.html',
   styleUrl: './movie-list-item.component.css'

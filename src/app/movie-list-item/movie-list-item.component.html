@@ -3,7 +3,7 @@
   <img ngSrc="image/{{movies?.imageUrl}}" alt="image for the movie" width="250" height="300" priority>
   <div>Year Released: {{movies?.yearReleased}}</div>
   <div>Director: {{movies?.director}}</div>
-  <div>Production Company: {{movies?.productionCompany}}</div>
+  <div>Production Company: {{movies?.productionCompany | customPipe: ' Ltd.' }}</div>
   <div>Date Posted: {{movies?.datePosted | date: 'yyyy-MM-dd hh:mm:ss'}}</div>
   <div>Ticker Price: {{movies?.price| currency: 'CAD':'symbol-narrow'}}</div>
 </div>
