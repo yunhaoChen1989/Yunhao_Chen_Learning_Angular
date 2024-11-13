@@ -1,6 +1,6 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {Movies} from "../Movies";
-import {NgIf, NgOptimizedImage} from "@angular/common";
+import {CurrencyPipe, DatePipe, NgIf, NgOptimizedImage, UpperCasePipe} from "@angular/common";
 import {ActivatedRoute, Router} from "@angular/router";
 import {MovieServiceService} from "../../service/movie-service.service";
 
@@ -11,7 +11,10 @@ import {MovieServiceService} from "../../service/movie-service.service";
   standalone: true,
   imports: [
     NgOptimizedImage,
-    NgIf
+    NgIf,
+    UpperCasePipe,
+    DatePipe,
+    CurrencyPipe
   ],
   templateUrl: './movie-list-item.component.html',
   styleUrl: './movie-list-item.component.css'

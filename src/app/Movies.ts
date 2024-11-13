@@ -4,5 +4,7 @@ export interface Movies{
   yearReleased:number,
   director:string,
   productionCompany:string,
-  imageUrl:string
+  imageUrl:string,
+  datePosted: Date,
+  price: number
 }

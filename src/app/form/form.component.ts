@@ -49,7 +49,9 @@ export class FormComponent implements OnInit{
         yearReleased:2024,
         director:'',
         productionCompany:'',
-        imageUrl:''
+        imageUrl:'',
+        datePosted: new Date(),
+        price: 0.00,
       }
       this.add=true;
       if(this.movies){
