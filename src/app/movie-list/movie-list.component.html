@@ -1,5 +1,5 @@
-<div *ngFor="let movie of movies; index as i;"  style="{{(i % 2 == 0) ? 'background-color: pink;' : 'background-color: teal;'}}" >
-  <app-movie-list-item [movies]="movie" [routerLink]="['/movie', movie.id]"></app-movie-list-item>
+<div *ngFor="let movie of movies; index as i;"  style="{{(i % 2 == 0) ? 'background-color: pink;' : 'background-color: teal;'}}" appHoverHighlight color="lightblue">
+  <app-movie-list-item [movies]="movie" [routerLink]="['/movie', movie.id]" ></app-movie-list-item>
   <div class="listButton">
     <button [routerLink]="['/addMovie']">add movie</button>
     <button [routerLink]="['/edit', movie.id]">edit</button>

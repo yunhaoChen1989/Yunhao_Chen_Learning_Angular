@@ -5,6 +5,7 @@ import {NgForOf} from "@angular/common";
 import {MovieServiceService} from "../../service/movie-service.service";
 import {RouterLink} from "@angular/router";
 import {routes} from "../app.routes";
+import {HoverHighlightDirective} from "../directives/hover-highlight.directive";
 
 @Component({
   selector: 'app-movie-list',
@@ -12,7 +13,8 @@ import {routes} from "../app.routes";
   imports: [
     MovieListItemComponent,
     NgForOf,
-    RouterLink
+    RouterLink,
+    HoverHighlightDirective
   ],
   templateUrl: './movie-list.component.html',
   styleUrl: './movie-list.component.css'
