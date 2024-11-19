@@ -4,13 +4,15 @@ import {MovieServiceService} from "../../service/movie-service.service";
 import {Movies} from "../Movies";
 import {FormControl, FormGroup, ReactiveFormsModule} from "@angular/forms";
 import {NgIf} from "@angular/common";
+import {HighlightOnFocusDirective} from "../directives/highlight-on-focus.directive";
 
 @Component({
   selector: 'app-form',
   standalone: true,
   imports: [
     ReactiveFormsModule,
-    NgIf
+    NgIf,
+    HighlightOnFocusDirective
   ],
   templateUrl: './form.component.html',
   styleUrl: './form.component.css'
@@ -26,7 +28,9 @@ export class FormComponent implements OnInit{
       yearReleased:new FormControl(null),
       director:new FormControl(null),
       productionCompany:new FormControl(null),
-      imageUrl:new FormControl(null)
+      imageUrl:new FormControl(null),
+      datePosted:new FormControl(null),
+      price:new FormControl(null)
     })
   }
 

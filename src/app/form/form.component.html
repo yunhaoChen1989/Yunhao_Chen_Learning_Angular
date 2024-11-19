@@ -2,23 +2,31 @@
   <form  [formGroup]="movieForm" (ngSubmit) = "save()">
     <div>
       <label>Name: </label>
-      <input type="text" name="name" id="name" formControlName="name" />
+      <input type="text" name="name" id="name" formControlName="name"   appHighlightOnFocus border="5px solid red"/>
     </div>
     <div>
       <label>yearReleased: </label>
-      <input type="text" name="yearReleased" id="yearReleased" formControlName="yearReleased"/>
+      <input type="text" name="yearReleased" id="yearReleased" formControlName="yearReleased" appHighlightOnFocus border="5px solid red"/>
     </div>
     <div>
       <label>director: </label>
-      <input type="text" name="director" id="director" formControlName="director" />
+      <input type="text" name="director" id="director" formControlName="director" appHighlightOnFocus border="5px solid green" />
     </div>
     <div>
       <label>production Company: </label>
-      <input type="text" name="productionCompany" id="productionCompany" formControlName="productionCompany" />
+      <input type="text" name="productionCompany" id="productionCompany" formControlName="productionCompany" appHighlightOnFocus border="5px solid red"/>
     </div>
     <div>
       <label>image file name: </label>
-      <input type="text" name="imageUrl" id="imageUrl" formControlName="imageUrl"/>
+      <input type="text" name="imageUrl" id="imageUrl" formControlName="imageUrl" appHighlightOnFocus border="5px solid red"/>
+    </div>
+    <div>
+      <label>date posted: </label>
+      <input type="text" name="datePosted" id="datePosted" formControlName="datePosted" appHighlightOnFocus border="5px solid red" />
+    </div>
+    <div>
+      <label>price: </label>
+      <input type="text" name="price" id="price" formControlName="price" appHighlightOnFocus border="5px solid red" >
     </div>
     <button type="submit">Save</button>
   </form>
