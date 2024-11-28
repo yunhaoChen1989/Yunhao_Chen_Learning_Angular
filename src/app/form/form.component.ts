@@ -5,6 +5,10 @@ import {Movies} from "../Movies";
 import {FormControl, FormGroup, ReactiveFormsModule} from "@angular/forms";
 import {NgIf} from "@angular/common";
 import {HighlightOnFocusDirective} from "../directives/highlight-on-focus.directive";
+import {MatFormFieldModule} from "@angular/material/form-field";
+import {MatButtonModule} from "@angular/material/button";
+import {MatInputModule} from "@angular/material/input";
+import {MatTooltipModule} from "@angular/material/tooltip";
 
 @Component({
   selector: 'app-form',
@@ -12,7 +16,11 @@ import {HighlightOnFocusDirective} from "../directives/highlight-on-focus.direct
   imports: [
     ReactiveFormsModule,
     NgIf,
-    HighlightOnFocusDirective
+    HighlightOnFocusDirective,
+    MatFormFieldModule,
+    MatButtonModule,
+    MatInputModule,
+    MatTooltipModule
   ],
   templateUrl: './form.component.html',
   styleUrl: './form.component.css'

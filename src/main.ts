@@ -20,7 +20,7 @@ const routes:Routes=[
   {path: 'movie/:id', loadComponent:()=>import('./app/movie-list-item/movie-list-item.component').then(m=>m.MovieListItemComponent)},
   {path: 'addMovie', loadComponent:()=>import('./app/form/form.component').then(m=>m.FormComponent) },
   {path: 'edit/:id', loadComponent:()=>import('./app/form/form.component').then(m=>m.FormComponent) },
-  {path:'modify-movie', loadComponent:()=>import('./app/modify-movie/modify-movie.component').then(m=>m.ModifyMovieComponent)},
+  {path:'modify-movie', loadComponent:()=>import('./app/form/form.component').then(m=>m.FormComponent) },
   {path:'**', loadComponent:()=>import('./app/page-not-found-component/page-not-found-component.component').then(m=>m.PageNotFoundComponentComponent)},
 ];
 bootstrapApplication(AppComponent, {providers:[provideRouter(routes),

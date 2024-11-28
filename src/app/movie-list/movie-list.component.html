@@ -1,9 +1,26 @@
-<div *ngFor="let movie of movies; index as i;"  style="{{(i % 2 == 0) ? 'background-color: pink;' : 'background-color: teal;'}}" appHoverHighlight color="lightblue">
-  <app-movie-list-item [movies]="movie" [routerLink]="['/movie', movie.id]" ></app-movie-list-item>
-  <div class="listButton">
-    <button [routerLink]="['/addMovie']">add movie</button>
-    <button [routerLink]="['/edit', movie.id]">edit</button>
-    <button (click)="deleteMovie(movie.id)">delete</button>
+<button mat-fab [routerLink]="['/addMovie']">
+  <mat-icon>add</mat-icon>
+</button>
+
+  <div *ngFor="let movie of movies; index as i;"  >
+    <mat-card appearance="outlined">
+      <mat-card-content>
+        <app-movie-list-item [movies]="movie" [routerLink]="['/movie', movie.id]" ></app-movie-list-item>
+      </mat-card-content>
+    </mat-card>
+
+
+    <button mat-fab [routerLink]="['/edit', movie.id]">
+      <mat-icon>edit</mat-icon>
+    </button>
+    <button mat-fab aria-label="delete" (click)="deleteMovie(movie.id)">
+      <mat-icon>delete</mat-icon>
+    </button>
+    <!--<div class="listButton">
+      <button [routerLink]="['/addMovie']">add movie</button>
+      <button [routerLink]="['/edit', movie.id]">edit</button>
+      <button (click)="deleteMovie(movie.id)">delete</button>
+    </div>-->
   </div>
-</div>
+
 

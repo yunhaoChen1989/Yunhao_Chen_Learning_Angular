@@ -1,12 +1,15 @@
-<div class="movieList">
-  <h1>Movie Name: {{movies?.name | uppercase}}</h1>
+<mat-list role="list">
+  <mat-list-item role="listitem" ><h1>Movie Name: {{movies?.name | uppercase}}</h1></mat-list-item>
+  <mat-divider></mat-divider>
   <img ngSrc="image/{{movies?.imageUrl}}" alt="image for the movie" width="250" height="300" priority>
-  <div>Year Released: {{movies?.yearReleased}}</div>
-  <div>Director: {{movies?.director}}</div>
-  <div>Production Company: {{movies?.productionCompany | customPipe: ' Ltd.' }}</div>
-  <div>Date Posted: {{movies?.datePosted | date: 'yyyy-MM-dd hh:mm:ss'}}</div>
-  <div>Ticker Price: {{movies?.price| currency: 'CAD':'symbol-narrow'}}</div>
-</div>
+  <mat-list-item role="listitem">Year Released: {{movies?.yearReleased}}</mat-list-item>
+  <mat-list-item role="listitem">Director: {{movies?.director}}</mat-list-item>
+  <mat-list-item role="listitem">Production Company: {{movies?.productionCompany | customPipe: ' Ltd.' }}</mat-list-item>
+  <mat-list-item role="listitem">Date Posted: {{movies?.datePosted | date: 'yyyy-MM-dd hh:mm:ss'}}</mat-list-item>
+  <mat-list-item role="listitem">Ticker Price: {{movies?.price| currency: 'CAD':'symbol-narrow'}}</mat-list-item>
+</mat-list>
 <div *ngIf="showButton">
-  <button (click)="goBack()">Back to Movie List</button>
+  <button mat-fab (click)="goBack()">
+    <mat-icon>arrow_back</mat-icon>
+  </button>
 </div>

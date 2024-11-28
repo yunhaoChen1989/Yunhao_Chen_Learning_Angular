@@ -6,6 +6,11 @@ import {MovieServiceService} from "../../service/movie-service.service";
 import {RouterLink} from "@angular/router";
 import {routes} from "../app.routes";
 import {HoverHighlightDirective} from "../directives/hover-highlight.directive";
+import {MatListModule} from "@angular/material/list";
+import {MatButtonToggleModule} from "@angular/material/button-toggle";
+import {MatIconModule} from "@angular/material/icon";
+import {MatButtonModule} from "@angular/material/button";
+import {MatCardModule} from "@angular/material/card";
 
 @Component({
   selector: 'app-movie-list',
@@ -14,7 +19,12 @@ import {HoverHighlightDirective} from "../directives/hover-highlight.directive";
     MovieListItemComponent,
     NgForOf,
     RouterLink,
-    HoverHighlightDirective
+    HoverHighlightDirective,
+    MatListModule,
+    MatButtonToggleModule,
+    MatIconModule,
+    MatButtonModule,
+    MatCardModule
   ],
   templateUrl: './movie-list.component.html',
   styleUrl: './movie-list.component.css'
